@@ -1,2 +1,2 @@
 # Web-project
-web page using HTML, CSS,  JS, PHP
+WEB page using HTML, CSS,  JS
