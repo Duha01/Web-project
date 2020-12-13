@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>WEB SECURITY</title>
+<meta charset="UTF-8">
+
+<script type="text/javascript">
+
+//function to print the page
+function printPage() {
+  window.print();
+}
+  
+//function to popup alerts
+function names() {
+  alert("DUHA");
+  alert("NAJLA");
+  alert("GHADAH");
+  alert("AND RINAD");
+}
+
+//function to change the CSS style to darker colors 
+function darkmood() {
+document.body.style.background = 'gray';
+document.getElementById("page").style.color = "white";
+document.getElementById("page").style.background = "#333";
+}
+
+
+//a function to show an alert with the date() function
+function time() {
+alert(Date());
+}
+
+</script>
+
+<style>
+/* We Choose Embedded CSS */
+
+
+/*Style the main page */
+body {
+  font-family: Arial;
+  padding: 40px;
+  background: #D2D4DA;
+}
+
+/* Header and image style */
+.header {
+  padding: 80px;
+  text-align: center;
+  background: white;
+  background-image: url("https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1952&q=80");
+  height: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+/* header style */
+.header h1 {
+  font-family:"Lucida Console";
+  font-size: 50px;
+  color: #CD5C5C;
+}
+
+.header p {
+  font-family:"Lucida Console";
+  font-size: 20px;
+  color: white;
+}
+
+/* Style the functions bar */
+.fun {
+  overflow: auto;
+  background-color: #333;
+}
+
+/* Style the buttons on the bar */
+.fun a {
+  float: left;
+  color: white;
+  padding: 20px;
+}
+
+/* Change color of buttons when mouse is hovering */
+.fun a:hover {
+  background-color: #CD5C5C;
+  color: white;
+}
+
+
+/*to make a section with diffrenct color for the content */
+.content {
+  background-color: white;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+
+
+/* Footer style */
+/*to make a section with diffrent color for the footer */
+.footer {
+  padding: 20px;
+  text-align: left;
+  font-size: 14px;
+  margin-top: 20px;
+  background-color: #333;
+  color: #CD5C5C;
+
+}
+
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>WEB SECURITY<h1>
+  <p><b>Web Systems and Technologies IT481T</b></p>
+</div>
+
+<!--bar buttons to redirect to the java script functions using anchor tag -->
+<div class="fun">
+  <a button onclick="printPage()">PRINT PAGE</a>
+  <a button onclick="names()">THE TEAM</a>
+  <a button onclick="darkmood();">DARK MOOD</a>
+  <a button onclick="time();">CHECK TIME</a>
+
+</div>
+
+
+    <div class="content" id="page"> 
+    
+      <h2>Web Applications Security Vulnerabilities/Attacks</h2>
+      <h5> </h5>
+
+  
+      <p>Web application security is the process of using verity of tools, techniques and protocols to ensure the security of your web application against deferent kinds of threats and hacking attacks. It should be the most important element in all business-based web application or any website that include sensitive data. To be able to deliver the right protection to your website, you must fist acknowledge the most common vulnerabilities</p><br>
+      <h4>What are common web app security vulnerabilities, common methods of attack or “vectors”?</h4>
+      <ul>
+        <li>
+          <b>SQL injection attacks</b></br>
+              Injection flaws result from a failure to filter untrusted input.
+              The problem is the attacker can ‘inject’ commands in those inputs and gets access to data in an unsupervised way.
+            </br></br><u>Solution</u>: Anything that your application receives from untrusted sources must be filtered.
+        </li><br><br>
+                <li>
+          <b>Cross-site scripting</b></br>
+             An attacker can use XSS to send a malicious script to an unsuspecting user. The end user’s browser has no way to know that the script should not be trusted, and will execute the script. Because it thinks the script came from a trusted source, the malicious script can access any cookies, session tokens, or other sensitive information retained by the browser and used with that site. These scripts can even rewrite the content of the HTML page.
+            </br></br><u>Solution</u>: Sanitize your input. Your application code should never output data received as input directly to the browser without checking it for malicious code.
+        </li><br><br>                   
+          <li>
+
+
+            <b>Insecure Deserialization</b></br>
+            To understand this point we must first deffrenciate between Serialization and Deserialization:</br>
+            <b>Serialization:</b> is process that convert object into specific structure data format 
+            such as convert Java Entity class to JSON format for sending via communication with other services or clients.</br>
+            <b>Deserialization</b> is process that convert data format into object 
+            such as client sends requests as JSON data format and back end service convert it to Java Entity Class.</br>
+        
+            insecure deserialization that is vulnerability when receive untrusted data may be used to damage, stolen or any violation without sufficient data verification.
+            </br></br><u>Solution</u>: The key is application should always check about receiving data and don’t accept serialized object from untrusted sources
+        </li><br><br>
+
+
+        <li>
+            <b>Broken authentication</b></br>
+            The risk of broken authentication is not restricted to a set attack pattern or specific application vulnerability. An application becomes vulnerable when adequate user authentication controls are improperly implemented or overlooked altogether, increasing the risk of user accounts being breached.
+            </br></br><u>Solution</u>: the use a Framework, they will save you the time and effort to implement such security, since they already have an authentication system that has been tested and proven before.
+        </li><br><br>
+
+
+        <li>
+           <b>Cross-site Request Forgery Attacks</b></br>
+            It occurs when a 3rd party site issues requests to the target site (e.g., your bank) using your browser with your cookies / session. If you are logged in on one tab on your bank’s homepage, for example, and they are vulnerable to this attack, another tab can make your browser misuse its credentials on the attacker’s behalf, resulting in the confused deputy problem. The deputy is the browser that misuses its authority (session cookies) to do something the attacker instructs it to do.
+
+            </br></br><u>Solution</u>: Store a secret token in a hidden form field which is inaccessible from the 3rd party site.
+        </li><br><br>
+
+        
+        <li>
+           <b>Sensitive Data Exposure</b></br>
+           This problem occurs when some Sensitive Data might not be protected the right way. Sensitive data should be encrypted at all times, including in transit and at rest. No exceptions. Credit card information and user passwords should never travel or be stored unencrypted, and passwords should always be hashed.
+
+
+            </br></br><u>Solution</u>: encryption, HTTPS and maybe not storing extremely sensitive data that you need it stored.
+        </li><br><br>
+      </ul>
+
+      <h4>Commen Web Application Security Best Practices: </h4>
+      <ol>
+        <li> Up-to-date encryption </li>
+        <li> Continuously vulnerabilities checking and patching them</li>
+        <li> Developing using clean code </li>
+        <li> Follow Secure Software Development Practices </li>
+        <li> Automate and Integrate Security Tools </li>
+      </ol>
+      
+</div>
+
+<div class="footer" id="page">
+
+<?php
+$servername= “localhost”;
+$username= “root”;
+$password=””;
+$dbname=”security”;
+
+$query =”select * from list”;
+//echo $query; exit;
+
+//create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+if ($conn->connect_error){
+die (“connection failed: ”.$conn->connect_error);
+}
+$result = $conn->query($query);
+Print(“student: ”);
+While($row = mysqli_fetch_row( $result ))
+{
+Print($row[1].””.$row[2].”I”);
+}
+$conn->close();
+?>
+
+</div>
+</div>
+</body>
+</html>
+
+</div>
+
+
+
+</body>
+</html>
